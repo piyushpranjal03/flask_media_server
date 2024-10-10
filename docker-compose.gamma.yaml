@@ -1,0 +1,12 @@
+version: '3'
+services:
+  flask-media-server:
+    volumes:
+      - gamma_videos:/app/videos
+    environment:
+      - FLASK_ENV=gamma
+    ports:
+      - "${GAMMA_PORT:-8081}:8081"
+
+volumes:
+  gamma_videos:

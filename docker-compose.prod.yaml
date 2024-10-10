@@ -1,0 +1,12 @@
+version: '3'
+services:
+  flask-media-server:
+    volumes:
+      - prod_videos:/app/videos
+    environment:
+      - FLASK_ENV=production
+    ports:
+      - "${PROD_PORT:-8082}:8081"
+
+volumes:
+  prod_videos:
